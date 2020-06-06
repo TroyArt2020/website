@@ -3,10 +3,10 @@
   header(class="bg-gray-200 bg-cover bg-center" :style="`background-image: url('${images.random().url}.jpg');`")
     .overlay(class="bg-black bg-opacity-50 text-white h-full p-6 flex flex-col items-center justify-center")
       .copy(class="mb-6 text-6xl font-bold text-center") Troy Art Group
-      .buttons(class="flex")
-        //a(class="btn btn-blue text-white shadow-xl mr-3" href="#") Visit on Facebook
-        //a(class="btn btn-green text-white shadow-xl mb-1" href="#") Donate with Venmo
-      //.notice(class="text-sm text-center px-10") All donations go directly towards artists & supplies.
+      .buttons(class="flex mb-6")
+        a(class="btn btn-blue text-white text-center shadow-xl mr-3" href="#") Visit on Facebook
+        a(class="btn btn-green text-white text-center shadow-xl" href="#") Donate with Venmo
+      .notice(class="text-sm text-center px-10") All donations go directly towards artists & supplies.
   main(class="p-6")
     .notice(class="bg-gray-300 text-sm border border-gray-600 p-3 mb-6")
       div(class="mb-2") Some works are in progress. If you would like to be attributed to any of these works please, contact us on Facebook and we will add proper attribution for you.
