@@ -1,8 +1,10 @@
 <template lang="pug">
 #app
   header(class="stack")
-    .background(class="bg-cover bg-center" :style="`background-image: url('${images.random().url}.jpg');`")
-    .overlay(class="bg-black bg-opacity-50 text-white h-full p-6 flex flex-col items-center justify-center")
+    #background(class="bg-cover bg-center z-0 opacity-0" :style="`background-image: url('${images.random().url}.jpg');`")
+      // Used for determining the loading state of the background image of #background
+      img(class="hidden" :src="`${images.random().url}.jpg`")
+    .overlay(class="bg-black bg-opacity-50 text-white h-full p-6 flex flex-col items-center justify-center z-10")
       .copy(class="mb-6 text-6xl font-bold text-center") Troy Art Group
       .buttons(class="flex flex-col md:flex-row justify-center mb-6 w-full")
         a(class="btn btn-blue text-white text-center shadow-xl w-full md:w-auto mr-0 md:mr-3 mb-3 md:mb-0" href="#") Visit on Facebook
@@ -27,9 +29,20 @@ Array.prototype.random = function () {
 export default {
   name: 'App',
   components: { Gallery },
+  mounted: function() {
+    const backgroundElement = document.getElementById('background');
+    const imageElement      = backgroundElement.firstChild;
+
+    imageElement.onload = function() {
+      setTimeout(function() {
+        backgroundElement.classList.add('opacity-100');
+        backgroundElement.classList.remove('opacity-0');
+      }, 500);
+    };
+  },
   data: function() {
     return {
-      images: [
+      images: [ // TODO: Move to /images.json and require it here
         { url: 'https://imgur.com/HZxf94z', attributions: [], date: '2020-06-05' },
         { url: 'https://imgur.com/XEYxeqE', attributions: [], date: '2020-06-05' },
         { url: 'https://imgur.com/rNfX1XI', attributions: [], date: '2020-06-05' },
@@ -160,8 +173,12 @@ button { @apply btn; }
   & > * { grid-column: 1; grid-row: 1; }
 }
 
-#app header {
-  text-shadow: 0 1px 1px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.9);
-  background-image: linear-gradient(90deg, rgba(254,0,255), rgba(0,136,255));
+#app {
+  & header {
+    text-shadow: 0 1px 1px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.9);
+    background-image: linear-gradient(90deg, rgba(254,0,255), rgba(0,136,255));
+  }
 }
+
+#background { transition: opacity 1s linear; }
 </style>

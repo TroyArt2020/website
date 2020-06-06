@@ -1,8 +1,8 @@
 <template lang="pug">
-#gallery
-  #loader(class="flex justify-center items-center")
+#gallery(class="stack")
+  #loader(class="self-start flex justify-center items-center opacity-100")
     .spinner(class="w-32 h-32 border-8")
-  #images(class="flex flex-wrap justify-between hidden")
+  #images(class="flex flex-wrap justify-between opacity-0")
     template(v-for="image in images")
       a.overlay(class="w-full md:w-auto mb-3 stack" :href="`${image.url}.jpg`" target="_blank")
         img(class="w-full md:w-auto" :src="`${image.url}b.jpg`")
@@ -26,8 +26,15 @@ export default {
         imagesLoaded++;
 
         if (imagesLoaded == this.images.length) {
-          loaderElement.classList.add('hidden');
-          imagesElement.classList.remove('hidden');
+          setTimeout(function() {
+            loaderElement.classList.add('hidden');
+          }, 500);
+
+          loaderElement.classList.add('opacity-0');
+          loaderElement.classList.remove('opacity-100');
+
+          imagesElement.classList.add('opacity-100');
+          imagesElement.classList.remove('opacity-0');
         }
       }
     }
@@ -50,6 +57,8 @@ export default {
   border-top-color: #4a5568; /* border-gray-700 */
   animation: 2s rotate-cw infinite linear;
 }
+
+#images, #loader { transition: opacity 0.5s linear; }
 
 @keyframes rotate-cw {
   0%   { transform: rotate(0); }
