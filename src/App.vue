@@ -4,9 +4,11 @@
     .background(class="bg-cover bg-center" :style="`background-image: url('${images.random().url}.jpg');`")
     .overlay(class="bg-black bg-opacity-50 text-white h-full p-6 flex flex-col items-center justify-center")
       .copy(class="mb-6 text-6xl font-bold text-center") Troy Art Group
-      .buttons(class="flex mb-6")
-        a(class="btn btn-blue text-white text-center shadow-xl mr-3" href="#") Visit on Facebook
-        a(class="btn btn-green text-white text-center shadow-xl" href="#") Donate with Venmo
+      .buttons(class="flex flex-col md:flex-row justify-center mb-6 w-full")
+        a(class="btn btn-blue text-white text-center shadow-xl w-full md:w-auto mr-0 md:mr-3 mb-3 md:mb-0" href="#") Visit on Facebook
+        a(class="btn btn-green text-white text-center shadow-xl w-full md:w-auto mr-0 md:mr-3 mb-3 md:mb-0" href="#") Donate with Venmo
+        a(class="btn btn-gray text-white text-center shadow-xl w-full md:w-auto mr-0 md:mr-3 mb-3 md:mb-0" href="#") Follow on Patreon
+        a(class="btn btn-red text-white text-center shadow-xl w-full md:w-auto" href="#") View on YouTube
       .notice(class="text-sm text-center px-10") All donations go directly towards artists & supplies.
   main(class="p-6")
     .notice(class="bg-gray-300 text-sm border border-gray-600 p-3 mb-6")
@@ -144,6 +146,11 @@ input, button { @apply appearance-none; }
   @apply bg-blue-700;
 
   &:hover { @apply bg-blue-600; }
+}
+.btn-gray {
+  @apply bg-gray-700;
+
+  &:hover { @apply bg-gray-600; }
 }
 button { @apply btn; }
 
