@@ -1,6 +1,7 @@
 <template lang="pug">
 #app
-  header(class="bg-gray-200 bg-cover bg-center" :style="`background-image: url('${images.random().url}.jpg');`")
+  header(class="stack")
+    .background(class="bg-cover bg-center" :style="`background-image: url('${images.random().url}.jpg');`")
     .overlay(class="bg-black bg-opacity-50 text-white h-full p-6 flex flex-col items-center justify-center")
       .copy(class="mb-6 text-6xl font-bold text-center") Troy Art Group
       .buttons(class="flex mb-6")
@@ -154,5 +155,6 @@ button { @apply btn; }
 
 #app header {
   text-shadow: 0 1px 1px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.9);
+  background-image: linear-gradient(90deg, rgba(254,0,255), rgba(0,136,255));
 }
 </style>
