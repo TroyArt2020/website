@@ -23,9 +23,7 @@
 <script>
 import Gallery from './components/Gallery.vue'
 
-Array.prototype.random = function () {
-  return this[Math.floor((Math.random()*this.length))];
-}
+Array.prototype.random = function () { return this[Math.floor((Math.random()*this.length))]; }
 
 export default {
   name: 'App',

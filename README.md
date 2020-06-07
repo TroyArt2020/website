@@ -20,5 +20,10 @@ yarn build
 yarn lint
 ```
 
+### Publishes to GitHub Pages
+```
+yarn export
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

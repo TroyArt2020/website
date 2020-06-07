@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "export": "cd ../TroyArt2020.github.io && git rm -rf *; cd ../TroyArt2020.github.io && cp -R ../website/dist/* . && git add . && git commit -m 'Update' && git push && cd ../website"
   },
   "dependencies": {
     "core-js": "^3.6.5",
