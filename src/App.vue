@@ -7,11 +7,12 @@
     .overlay(class="bg-black bg-opacity-50 text-white h-full p-6 flex flex-col items-center justify-center z-10")
       .copy(class="mb-6 text-6xl font-bold text-center") Troy Art Group
       .buttons(class="flex flex-col md:flex-row justify-center mb-6 w-full")
-        a(class="btn btn-blue text-white text-center shadow-xl w-full md:w-auto mr-0 md:mr-3 mb-3 md:mb-0" href="#") Visit on Facebook
-        a(class="btn btn-green text-white text-center shadow-xl w-full md:w-auto mr-0 md:mr-3 mb-3 md:mb-0" href="#") Donate with Venmo
-        a(class="btn btn-gray text-white text-center shadow-xl w-full md:w-auto mr-0 md:mr-3 mb-3 md:mb-0" href="#") Follow on Patreon
-        a(class="btn btn-red text-white text-center shadow-xl w-full md:w-auto" href="#") View on YouTube
-      .notice(class="text-sm text-center px-10") All donations go directly towards artists & supplies.
+        a(class="btn-green" href="#") Donate with Venmo
+        //a(class="btn-blue" href="#") Visit on Facebook
+        //a(class="btn-gray" href="#") Follow on Patreon
+        //a(class="btn-red" href="#") View on YouTube
+        //a(class="btn-purple" href="#") View on Instagram
+      .notice(class="text-sm text-center px-10") All donations go directly towards local artists & supplies.
   main(class="p-6")
     .notice(class="bg-gray-300 text-sm border border-gray-600 p-3 mb-6")
       div(class="mb-2") Some works are in progress. If you would like to be attributed to any of these works please, contact us on Facebook and we will add proper attribution for you.
@@ -145,26 +146,37 @@ input, button { @apply appearance-none; }
 
 /* Style with text-*, bg-*, etc. */
 .btn { @apply font-bold flex items-center justify-center py-2 px-4 select-none; }
+
 .btn-green {
   @apply bg-green-700;
 
   &:hover { @apply bg-green-600; }
 }
+
 .btn-red {
   @apply bg-red-700;
 
   &:hover { @apply bg-red-600; }
 }
+
 .btn-blue {
   @apply bg-blue-700;
 
   &:hover { @apply bg-blue-600; }
 }
+
+.btn-purple {
+  @apply bg-purple-700;
+
+  &:hover { @apply bg-purple-600; }
+}
+
 .btn-gray {
   @apply bg-gray-700;
 
   &:hover { @apply bg-gray-600; }
 }
+
 button { @apply btn; }
 
 .stack {
@@ -173,12 +185,24 @@ button { @apply btn; }
   & > * { grid-column: 1; grid-row: 1; }
 }
 
-#app {
-  & header {
-    text-shadow: 0 1px 1px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.9);
-    background-image: linear-gradient(90deg, rgba(254,0,255), rgba(0,136,255));
+#app header {
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.9);
+  background-image: linear-gradient(90deg, rgba(254,0,255), rgba(0,136,255));
+}
+
+#app header .buttons a {
+  @apply btn text-white text-center shadow-xl w-full mr-0 mb-3;
+
+  &:last-child { @apply mb-0; }
+}
+
+@screen md {
+  #app header .buttons a {
+    @apply w-auto mr-3 mb-0;
+
+    &:last-child { @apply mr-0; }
   }
 }
 
-#background { transition: opacity 1s linear; }
+#background { transition: opacity 0.5s linear; }
 </style>
