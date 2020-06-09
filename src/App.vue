@@ -7,11 +7,11 @@
     .overlay(class="bg-black bg-opacity-50 text-white h-full p-6 flex flex-col items-center justify-center z-10")
       .copy(class="mb-6 text-6xl font-bold text-center") Troy Art Group
       .buttons(class="flex flex-col md:flex-row justify-center mb-6 w-full")
-        a(class="btn-green" href="#") Donate with Venmo
-        //a(class="btn-blue" href="#") Visit on Facebook
-        //a(class="btn-gray" href="#") Follow on Patreon
-        //a(class="btn-red" href="#") View on YouTube
-        //a(class="btn-purple" href="#") View on Instagram
+        //a(class="btn-green" href="#" target="_blank") Donate with Venmo
+        a(class="btn-blue" href="https://www.facebook.com/Troy-Art-Group-100105411580997" target="_blank") Visit on Facebook
+        //a(class="btn-gray" href="#" target="_blank") Follow on Patreon
+        //a(class="btn-red" href="#" target="_blank") View on YouTube
+        //a(class="btn-purple" href="#" target="_blank") View on Instagram
       .notice(class="text-sm text-center px-10") All donations go directly towards local artists & supplies.
   main(class="p-6")
     .notice(class="bg-gray-300 text-sm border border-gray-600 p-3 mb-6")
